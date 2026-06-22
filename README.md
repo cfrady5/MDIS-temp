@@ -7,31 +7,25 @@ six speaker quotes, and the "Stay Up to Date" (MDIS 2027) email capture.
 No build step — open `index.html` in a browser, or host the folder anywhere
 static (Netlify, GitHub Pages, Vercel, or back into Wix as an embed).
 
-## Add your images
+## Images
 
-Drop your image files into the `images/` folder using the **target names** below.
-The page references these exact names; until a file is present, a graceful
-gradient + initials placeholder is shown (nothing breaks).
+The **six quote photos are already added** to `images/` (as `.avif`) and wired
+into the page. Still optional/recommended to add:
 
-| Your original file                                    | Save it as (in `images/`)      | Used for                |
-|-------------------------------------------------------|--------------------------------|-------------------------|
-| `WordMark White RASTER_edited.png`                    | `logo-mdis-wordmark.png`       | Nav, hero, footer logo  |
-| `WhitePoweredByARI.png`                               | `logo-powered-by-ari.png`      | Hero "Powered by ARI"   |
-| `HonMikeDodd-4559.jpg`                                | `voice-dodd.jpg`               | Quote — Hon. Mike Dodd  |
-| `The Role of DOW Labs-4793.jpg`                       | `voice-tran.jpg`               | Quote — Mike Tran       |
-| `Competition+the Future Fight-4680 (1).jpg`           | `voice-thabet.jpg`             | Quote — Jennifer Thabet |
-| `GovernorBraun (4 of 8).jpg`                          | `voice-braun.jpg`              | Quote — Gov. Mike Braun |
-| `AchievingDroneDominancefortheAmericanWarfighter (7 of 7).jpg` | `voice-limeberry.jpg`  | Quote — Lt. Col. Limeberry |
-| `SenToddYoung-4846.jpg`                               | `voice-young.jpg`              | Quote — Sen. Todd Young |
-| `1.png`                                               | `favicon.png`                  | Browser tab icon        |
-| *(optional)* any wide event photo                     | `hero.jpg`                     | Hero background         |
+| Your original file                 | Save it as (in `images/`)  | Used for                    | Status   |
+|------------------------------------|----------------------------|-----------------------------|----------|
+| `WordMark White RASTER_edited.png` | `logo-mdis-wordmark.png`   | Nav, hero, footer logo      | **add**  |
+| `WhitePoweredByARI.png`            | `logo-powered-by-ari.png`  | Hero "Powered by ARI"       | **add**  |
+| `1.png`                            | `favicon.png`              | Browser tab icon            | **add**  |
+| *(optional)* any wide event photo  | `hero.jpg`                 | Hero background             | optional |
+| *(added)* quote photos             | `voice-*.avif`             | Six speaker quotes          | ✅ done  |
 
-`.avif` works too — if you prefer AVIF, save the files with the same base names
-but `.avif`/`.png` and update the matching references in `index.html`
-(search for `images/`).
+Until the logo files are present, the page falls back gracefully: the wordmark
+shows a text "MDIS", the "Powered by ARI" image hides, and the hero shows its
+gradient. Add the two white logo PNGs for the full branded look.
 
 ### Quick rename helper
-If you copy your originals into `images/` with their original names, run:
+Copy your remaining originals into `images/` with their original names, then:
 
 ```bash
 cd images && bash rename.sh
