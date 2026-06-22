@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Midwest Defense Innovation Summit (MDIS) · Indianapolis</title>
+<meta name="description" content="The Midwest Defense Innovation Summit (MDIS) advances national security through mission-driven technology and capability development. Powered by the Applied Research Institute. MDIS 2027 updates coming soon." />
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Midwest Defense Innovation Summit (MDIS)" />
+<meta property="og:description" content="Advancing national security through mission-driven technology. Powered by the Applied Research Institute. MDIS 2027 updates coming soon." />
+<meta property="og:image" content="https://static.wixstatic.com/media/aa9f5a_c09e94f187784388a5411ee20c3080a9~mv2.png" />
+<meta name="theme-color" content="#0a1428" />
+
+<!-- favicon (drop your icon at images/favicon.png) -->
+<link rel="icon" href="images/favicon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* =========================================================================
+   BRAND TOKENS  —  edit these to match your exact branding
+   ========================================================================= */
+:root{
+  --navy-950:#070f1f;
+  --navy-900:#0a1428;
+  --navy-800:#0d1d39;
+  --navy-700:#11294d;
+
+  --accent:#f2a900;          /* primary accent — change to your brand accent */
+  --accent-soft:rgba(242,169,0,.14);
+
+  --ink:#eaf1fb;             /* primary text on dark */
+  --ink-mut:#a9b9d2;         /* muted text on dark */
+  --line:rgba(255,255,255,.10);
+
+  --max:1180px;
+  --radius:16px;
+  --shadow:0 18px 50px -20px rgba(2,8,23,.7);
+  --font-display:"Saira Condensed","Arial Narrow",system-ui,sans-serif;
+  --font-body:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--font-body);color:var(--ink);
+  background:var(--navy-900);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--font-display);line-height:1.05;margin:0;letter-spacing:.4px;text-transform:uppercase}
+p{margin:0 0 1rem}
+.container{width:min(100% - 2.4rem, var(--max));margin-inline:auto}
+.eyebrow{
+  font-family:var(--font-display);text-transform:uppercase;letter-spacing:3px;font-weight:700;
+  font-size:.82rem;color:var(--accent);display:inline-flex;align-items:center;gap:.6rem;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--accent)}
+.btn{
+  --bg:var(--accent);--fg:#10182b;
+  display:inline-flex;align-items:center;gap:.55rem;background:var(--bg);color:var(--fg);
+  font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:1.2px;
+  padding:.9rem 1.6rem;border-radius:999px;border:0;cursor:pointer;font-size:.98rem;
+  transition:transform .15s ease, box-shadow .2s ease;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(242,169,0,.6)}
+.btn--ghost{--bg:transparent;--fg:var(--ink);border:1.5px solid var(--line)}
+.btn--ghost:hover{box-shadow:none;border-color:var(--accent);color:var(--accent)}
+.btn--lg{padding:1.05rem 2.1rem;font-size:1.08rem}
+
+/* ============================ NAV ============================ */
+header.nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:1.1rem 0;transition:.3s ease}
+header.nav.scrolled{background:rgba(7,15,31,.85);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);padding:.6rem 0}
+.nav__row{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.8rem}
+.brand__logo{height:34px;width:auto}
+.brand__fallback{font-family:var(--font-display);font-weight:800;letter-spacing:1px;font-size:1.15rem}
+.nav__links{display:flex;align-items:center;gap:2rem}
+.nav__links a{font-weight:600;font-size:.95rem;color:var(--ink-mut);transition:color .2s}
+.nav__links a:hover{color:var(--ink)}
+.nav__cta{display:flex;align-items:center;gap:1rem}
+.nav__toggle{display:none;background:none;border:0;color:var(--ink);cursor:pointer;padding:.4rem}
+.nav__toggle svg{width:28px;height:28px}
+@media (max-width:920px){
+  .nav__links{
+    position:fixed;inset:0 0 0 auto;width:min(80vw,320px);flex-direction:column;align-items:flex-start;
+    justify-content:center;gap:1.6rem;background:var(--navy-950);padding:2rem;transform:translateX(100%);
+    transition:transform .3s ease;box-shadow:var(--shadow);
+  }
+  .nav__links.open{transform:translateX(0)}
+  .nav__links a{font-size:1.3rem;font-family:var(--font-display);text-transform:uppercase;color:var(--ink)}
+  .nav__toggle{display:inline-flex}
+}
+
+/* ============================ HERO ============================ */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:8rem 0 4rem;overflow:hidden}
+.hero__bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    linear-gradient(180deg, rgba(7,15,31,.55) 0%, rgba(7,15,31,.8) 55%, var(--navy-900) 100%),
+    radial-gradient(120% 90% at 70% 10%, var(--navy-700), var(--navy-950) 70%),
+    url("images/hero.jpg");
+  background-size:cover;background-position:center;
+}
+.hero__bg::after{
+  content:"";position:absolute;inset:0;opacity:.5;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:54px 54px;mask-image:radial-gradient(80% 70% at 50% 30%, #000 30%, transparent 80%);
+}
+.hero__inner{position:relative;z-index:1;max-width:780px}
+.hero__wordmark{height:clamp(54px,9vw,96px);width:auto;margin-bottom:1.8rem}
+.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);font-weight:800;margin:0 0 1.2rem;text-wrap:balance}
+.hero h1 .accent{color:var(--accent)}
+.hero__lead{font-size:clamp(1.05rem,2.2vw,1.3rem);color:var(--ink-mut);max-width:620px;margin-bottom:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:2.2rem}
+.chip{
+  display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.06);
+  border:1px solid var(--line);padding:.55rem 1rem;border-radius:999px;font-weight:600;font-size:.92rem;
+}
+.chip svg{width:18px;height:18px;color:var(--accent);flex:none}
+.hero__actions{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.hero__powered{margin-top:2.4rem;display:flex;align-items:center;gap:.8rem;color:var(--ink-mut);font-size:.85rem}
+.hero__powered img{height:34px;width:auto}
+.scrollcue{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:1;color:var(--ink-mut);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:.4rem}
+.scrollcue span{width:1px;height:34px;background:linear-gradient(var(--accent),transparent);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.2;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* ============================ MISSION ============================ */
+.mission{background:var(--navy-950);border-block:1px solid var(--line);text-align:center}
+.mission .container{max-width:860px}
+.mission h2{font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:700;margin:1.1rem 0 1.2rem;text-transform:none;letter-spacing:0;line-height:1.25}
+.mission h2 b{color:var(--accent);font-weight:700}
+.mission p{color:var(--ink-mut);font-size:1.05rem}
+.eyebrow--center{justify-content:center}
+
+/* ============================ VOICES ============================ */
+section{padding:5.5rem 0}
+.section-head{max-width:640px;margin-bottom:3rem}
+.section-head h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;margin:1rem 0 .8rem}
+.voices__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.voice{
+  display:flex;flex-direction:column;background:rgba(255,255,255,.035);border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;transition:transform .2s ease, border-color .2s ease;
+}
+.voice:hover{transform:translateY(-6px);border-color:var(--accent)}
+.voice__media{aspect-ratio:4/3;position:relative;background:linear-gradient(160deg,#1c3a66,#0b1730);overflow:hidden}
+.voice__media .ph-img{position:absolute;inset:0;background-size:cover;background-position:center top}
+.voice__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,15,31,.85))}
+.voice__init{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--font-display);font-size:3rem;font-weight:800;color:rgba(255,255,255,.28)}
+.voice__body{padding:1.6rem 1.5rem 1.4rem;display:flex;flex-direction:column;flex:1}
+.voice__mark{font-family:var(--font-display);font-size:3rem;line-height:.5;color:var(--accent);opacity:.55;height:1.3rem}
+.voice blockquote{margin:0;flex:1}
+.voice blockquote p{font-size:1.05rem;color:var(--ink);font-style:italic;margin:.4rem 0 1.2rem}
+.voice figcaption{border-top:1px solid var(--line);padding-top:1rem;font-family:var(--font-display);font-weight:700;letter-spacing:.6px;text-transform:uppercase;font-size:1.02rem}
+@media (max-width:920px){.voices__grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.voices__grid{grid-template-columns:1fr}}
+
+/* ============================ SIGNUP / STAY UP TO DATE ============================ */
+.signup{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy-700),var(--navy-950));text-align:center}
+.signup::before{content:"";position:absolute;inset:0;opacity:.18;background:radial-gradient(60% 120% at 50% 0%,var(--accent),transparent 60%)}
+.signup .container{position:relative;max-width:680px}
+.signup h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:1rem}
+.signup p{color:var(--ink-mut);margin-bottom:2rem;font-size:1.05rem}
+.signup__form{display:flex;gap:.7rem;max-width:480px;margin:0 auto;flex-wrap:wrap}
+.signup__form input{
+  flex:1 1 220px;padding:1rem 1.2rem;border-radius:999px;border:1px solid var(--line);
+  background:rgba(255,255,255,.06);color:var(--ink);font-size:1rem;font-family:var(--font-body);
+}
+.signup__form input::placeholder{color:var(--ink-mut)}
+.signup__form input:focus{outline:none;border-color:var(--accent);background:rgba(255,255,255,.1)}
+.signup__ok{margin-top:1.2rem;color:var(--accent);font-weight:600;display:none}
+.signup__ok.show{display:block}
+
+/* ============================ FOOTER ============================ */
+footer{background:var(--navy-950);border-top:1px solid var(--line);padding:3.5rem 0 2rem}
+.foot__grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;align-items:flex-start}
+.foot__brand img{height:38px;width:auto;margin-bottom:1rem}
+.foot__brand p{color:var(--ink-mut);font-size:.9rem;max-width:280px;margin:0}
+.foot__col h4{font-family:var(--font-display);text-transform:uppercase;letter-spacing:1.5px;font-size:.85rem;color:var(--ink);margin-bottom:1rem}
+.foot__col a{display:block;color:var(--ink-mut);font-size:.92rem;margin-bottom:.6rem}
+.foot__col a:hover{color:var(--accent)}
+.foot__bottom{border-top:1px solid var(--line);margin-top:2.4rem;padding-top:1.6rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;color:var(--ink-mut);font-size:.84rem}
+.social{display:flex;gap:.8rem}
+.social a{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink-mut);transition:.2s}
+.social a:hover{color:var(--accent);border-color:var(--accent)}
+.social svg{width:18px;height:18px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .scrollcue span{animation:none}html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav" id="nav">
+  <div class="container nav__row">
+    <a class="brand" href="#top" aria-label="Midwest Defense Innovation Summit home">
+      <img class="brand__logo" src="images/logo-mdis-wordmark.png" alt="Midwest Defense Innovation Summit"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="brand__fallback" style="display:none">MDIS</span>
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="#mission">About</a>
+      <a href="#voices">Voices</a>
+      <a href="#updates">Stay Updated</a>
+    </nav>
+    <div class="nav__cta">
+      <a href="#updates" class="btn">Get Updates</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="container hero__inner">
+    <img class="hero__wordmark" src="images/logo-mdis-wordmark.png" alt="Midwest Defense Innovation Summit"
+         onerror="this.style.display='none'">
+    <span class="eyebrow reveal">Midwest Defense Innovation Summit</span>
+    <h1 class="reveal">Advancing National Security Through&nbsp;<span class="accent">Innovation</span></h1>
+    <p class="hero__lead reveal">The region's premier gathering uniting senior defense leaders, policymakers, industry, and academia to test, transition, and field emerging technology — at speed.</p>
+
+    <div class="hero__meta reveal">
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg> Indianapolis, IN</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> MDIS 2027 — Coming Soon</span>
+    </div>
+
+    <div class="hero__actions reveal">
+      <a href="#updates" class="btn btn--lg">Stay Up to Date</a>
+      <a href="#voices" class="btn btn--ghost btn--lg">Voices From the Summit</a>
+    </div>
+
+    <div class="hero__powered reveal">
+      <img src="images/logo-powered-by-ari.png" alt="Powered by the Applied Research Institute" onerror="this.style.display='none'">
+    </div>
+  </div>
+  <div class="scrollcue" aria-hidden="true"><span></span>Scroll</div>
+</section>
+
+<!-- ============================ MISSION ============================ -->
+<section class="mission" id="mission">
+  <div class="container reveal">
+    <span class="eyebrow eyebrow--center">About the Summit</span>
+    <h2>The Midwest Defense Innovation Summit advances national security through <b>mission-driven technology and capability development</b>.</h2>
+    <p>Powered by the Applied Research Institute, MDIS convenes senior defense leaders, policymakers, industry, academia, and regional partners to examine how emerging technologies are tested, transitioned, and fielded at speed in support of national defense priorities.</p>
+  </div>
+</section>
+
+<!-- ============================ VOICES ============================ -->
+<!-- Quotes are reproduced from the live MDIS site content supplied by the owner.
+     Three were lightly cleaned for grammar/punctuation; originals noted inline. -->
+<section id="voices">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Voices From the Summit</span>
+      <h2>The Warfighter Is Waiting</h2>
+      <p>Leaders from government, industry, and the military on why the Midwest is the engine of defense innovation.</p>
+    </div>
+    <div class="voices__grid">
+
+      <figure class="voice reveal">
+        <div class="voice__media"><div class="ph-img" data-img="images/voice-dodd.jpg"></div><div class="voice__init">MD</div></div>
+        <div class="voice__body">
+          <div class="voice__mark">&ldquo;</div>
+          <blockquote><p>The work being done here in the Midwest is essential to reducing dependencies and ensuring our warfighters have access to secure, next-generation hardware.</p></blockquote>
+          <figcaption>Honorable Mike Dodd</figcaption>
+        </div>
+      </figure>
+
+      <figure class="voice reveal">
+        <div class="voice__media"><div class="ph-img" data-img="images/voice-tran.jpg"></div><div class="voice__init">MT</div></div>
+        <div class="voice__body">
+          <div class="voice__mark">&ldquo;</div>
+          <blockquote><p>The Midwest isn't just where good ideas happen. It's where they get built, scaled, and delivered.</p></blockquote>
+          <figcaption>Mike Tran</figcaption>
+        </div>
+      </figure>
+
+      <!-- original: "We can't just fund the technology we have to fund the transition." -->
+      <figure class="voice reveal">
+        <div class="voice__media"><div class="ph-img" data-img="images/voice-thabet.jpg"></div><div class="voice__init">JT</div></div>
+        <div class="voice__body">
+          <div class="voice__mark">&ldquo;</div>
+          <blockquote><p>We need speed, scale, and disruption. We can't just fund the technology — we have to fund the transition.</p></blockquote>
+          <figcaption>Jennifer Thabet</figcaption>
+        </div>
+      </figure>
+
+      <!-- original name as supplied: "Govenor Mike Braun" -->
+      <figure class="voice reveal">
+        <div class="voice__media"><div class="ph-img" data-img="images/voice-braun.jpg"></div><div class="voice__init">MB</div></div>
+        <div class="voice__body">
+          <div class="voice__mark">&ldquo;</div>
+          <blockquote><p>We have the ability and the talent to move quickly from concept to capability, creating high-wage jobs and strengthening our economy while supporting the Department of War.</p></blockquote>
+          <figcaption>Governor Mike Braun</figcaption>
+        </div>
+      </figure>
+
+      <figure class="voice reveal">
+        <div class="voice__media"><div class="ph-img" data-img="images/voice-limeberry.jpg"></div><div class="voice__init">ML</div></div>
+        <div class="voice__body">
+          <div class="voice__mark">&ldquo;</div>
+          <blockquote><p>The Midwest is becoming a titan in defense innovation. The warfighter is waiting. Keep up or get out of the way.</p></blockquote>
+          <figcaption>Lt. Col. Matt Limeberry</figcaption>
+        </div>
+      </figure>
+
+      <!-- original: "If use this moment of opportunity and strategic competition to become a better version of ourselves then we can't lose." -->
+      <figure class="voice reveal">
+        <div class="voice__media"><div class="ph-img" data-img="images/voice-young.jpg"></div><div class="voice__init">TY</div></div>
+        <div class="voice__body">
+          <div class="voice__mark">&ldquo;</div>
+          <blockquote><p>If we use this moment of opportunity and strategic competition to become a better version of ourselves, then we can't lose.</p></blockquote>
+          <figcaption>Senator Todd Young</figcaption>
+        </div>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ STAY UP TO DATE ============================ -->
+<section class="signup" id="updates">
+  <div class="container reveal">
+    <span class="eyebrow eyebrow--center">Stay Up to Date</span>
+    <h2>MDIS 2027 Is Coming</h2>
+    <p>MDIS 2027 updates are coming soon. From speaker announcements to agenda releases, stay ahead of what's next by joining our email list.</p>
+    <form class="signup__form" id="signupForm" novalidate>
+      <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required />
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+    <p class="signup__ok" id="signupOk">Thanks — you're on the list. We'll be in touch with MDIS 2027 news.</p>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer>
+  <div class="container">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <img src="images/logo-mdis-wordmark.png" alt="Midwest Defense Innovation Summit" onerror="this.style.display='none'">
+        <p>Midwest Defense Innovation Summit (MDIS). Powered by the Applied Research Institute.</p>
+      </div>
+      <div class="foot__col">
+        <h4>Explore</h4>
+        <a href="#mission">About</a>
+        <a href="#voices">Voices</a>
+        <a href="#updates">Stay Updated</a>
+      </div>
+      <div class="foot__col">
+        <h4>Contact</h4>
+        <a href="mailto:MDIS@theari.us">MDIS@theari.us</a>
+        <a href="https://twitter.com/defensesummit">@defensesummit</a>
+      </div>
+      <div class="foot__col">
+        <h4>Follow</h4>
+        <div class="social">
+          <a href="https://twitter.com/defensesummit" aria-label="X / Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7 8 8.2 12h-6.4l-5-7.3L5.9 22H2.8l7.5-8.6L2.4 2h6.6l4.5 6.6L18.9 2Zm-1.1 18h1.7L7.3 3.8H5.4L17.8 20Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <span>© 2026 Midwest Defense Innovation Summit. All rights reserved.</span>
+      <span>Powered by the Applied Research Institute · Indianapolis, IN</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* sticky nav */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+/* mobile menu */
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  const open = links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  links.classList.remove('open'); toggle.setAttribute('aria-expanded', false);
+}));
+
+/* scroll reveal */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i) => {
+  el.style.transitionDelay = (i % 3) * 80 + 'ms'; io.observe(el);
+});
+
+/* speaker photos: load data-img as background if the file is present (initials show otherwise) */
+document.querySelectorAll('.ph-img[data-img]').forEach(el => {
+  const url = el.getAttribute('data-img');
+  const img = new Image();
+  img.onload = () => { el.style.backgroundImage = `url("${url}")`; el.parentElement.querySelector('.voice__init').style.display='none'; };
+  img.src = url;
+});
+
+/* signup (demo only — connect to your email provider, see README) */
+document.getElementById('signupForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (e.target.email.value && e.target.checkValidity()){
+    document.getElementById('signupOk').classList.add('show');
+    e.target.reset();
+  } else { e.target.reportValidity(); }
+});
+</script>
+</body>
+</html>
